@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "YouTube 'Skip Ad' Clicker",
   "version": "1.0",
-  "description": "Click the 'Skip Ad' button on YouTube videos automatically.",
+  "description": "A helper for skipping YouTube ads that have the 'Skip Ad' button.",
   "action": {
     "default_popup": "ext/index.html"
   },
