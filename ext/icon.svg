@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="128" height="128">
+  <!-- Background -->
+  <rect width="64" height="64" rx="14" fill="#38bdf8"/>
+  <!-- Open Stylized C -->
+  <path d="M46 20
+           Q36 12 24 20
+           Q12 32 24 44
+           Q36 52 46 44"
+        fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Bigger S, moved to top, same horizontal position and size -->
+  <text x="14" y="18" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="bold" fill="#fff" stroke="#38bdf8" stroke-width="2.2" paint-order="stroke" style="dominant-baseline:middle;">S</text>
+</svg>

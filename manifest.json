@@ -13,5 +13,11 @@
       "matches": ["https://*.youtube.com/*", "https://youtube.com/*"],
       "run_at": "document_end"
     }
-  ]
+  ],
+  "icons": {
+    "16": "ext/icon.png",
+    "32": "ext/icon.png",
+    "48": "ext/icon.png",
+    "128": "ext/icon.png"
+  }
 }
