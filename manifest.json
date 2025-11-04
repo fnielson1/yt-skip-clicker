@@ -6,7 +6,7 @@
   "action": {
     "default_popup": "ext/index.html"
   },
-  "permissions": ["activeTab", "scripting", "storage"],
+  "permissions": ["scripting"],
   "content_scripts": [
     {
       "js": ["content.js"],

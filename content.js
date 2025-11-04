@@ -32,3 +32,18 @@ window.addEventListener('keydown', function(e) {
     });
   }
 });
+
+// Inject CSS for UI improvements
+function main() {
+  const style = document.createElement('style');
+  style.textContent = `
+    /* Green ring on skip button when focused */
+    .${DEFAULT_SKIP_BUTTON_CLASS}:focus {
+      outline: 3px solid #22c55e !important;
+      outline-offset: 2px;
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+main();
