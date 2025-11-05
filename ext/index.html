@@ -1,59 +1,9 @@
 <html lang="en">
   <head>
-    <script src="script.js" defer></script>
+    <script src="ui-script.js" defer></script>
     <script src="select-keys.js" defer></script>
     <title></title>
-    <style>
-      body {
-        padding: 1em;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 1em;
-        min-width: 320px;
-        box-sizing: border-box;
-      }
-      .container {
-        width: 100%;
-        max-width: 400px;
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-      }
-      div {
-        text-align: center;
-      }
-      label, input, button {
-        width: 100%;
-        box-sizing: border-box;
-        display: block;
-      }
-      input {
-        font-size: 1em;
-        padding: 0.5em;
-        margin-bottom: 0.5em;
-      }
-      button.save-button {
-        font-size: 1em;
-        padding: 0.5em;
-        margin-top: 0.5em;
-      }
-      h2 {
-        text-align: center;
-        margin-top: 0;
-      }
-      h4 {
-        text-align: center;
-        margin-top: 0;
-      }
-      .input-group {
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-        width: 100%;
-      }
-    </style>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <div class="container">
@@ -73,10 +23,22 @@
         <input id="skip-ad-classname" type="text" />
       </div>
 
+      <!-- Modifier keys -->
+      <div>
+        <label for="alt-checkbox">
+          Alt
+        </label>
+        <input type="checkbox" id="alt-checkbox" />
+        <label for="ctrl-checkbox">
+          Ctrl
+        </label>
+        <input type="checkbox" id="ctrl-checkbox" />
+      </div>
+
       <!-- Focus shortcut -->
       <div class="input-group">
         <label id="focus-shortcut-label" for="focus-shortcut">
-          Focus using the keyboard shortcut Alt + [Shortcut]:
+          Focus using the keyboard shortcut:
         </label>
         <select id="focus-shortcut" name="focus-shortcut">
           <!-- final option is Enter -->

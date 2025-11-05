@@ -6,10 +6,10 @@
   "action": {
     "default_popup": "ext/index.html"
   },
-  "permissions": ["activeTab", "scripting", "storage"],
+  "permissions": ["activeTab", "storage"],
   "content_scripts": [
     {
-      "js": ["content.js"],
+      "js": ["ext/logger.js", "ext/utils.js", "ext/css-utils.js", "content.js"],
       "matches": ["https://*.youtube.com/*", "https://youtube.com/*"],
       "run_at": "document_end"
     }

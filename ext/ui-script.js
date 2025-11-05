@@ -29,7 +29,7 @@ async function updateUiWithSettings(settings) {
  *
  * @returns {Promise<void>}
  */
-async function main() {
+async function uiScript() {
   const saveButton = document.getElementById('save-button');
   const resetButton = document.getElementById('reset-button');
   const skipClassNameElement = document.getElementById('skip-ad-classname');
@@ -56,6 +56,7 @@ async function main() {
 
     // Update UI with saved settings
     await updateUiWithSettings(response);
+    window.close(); // Close the dialog
   });
 
   resetButton.addEventListener('click', async (e) => {
@@ -64,7 +65,8 @@ async function main() {
       action: 'resetSettings',
     });
     await updateUiWithSettings(response);
+    window.close(); // Close the dialog
   })
 }
 
-main();
+uiScript();

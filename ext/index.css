@@ -1,0 +1,46 @@
+body {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1em;
+  min-width: 320px;
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+label, input, button {
+  box-sizing: border-box;
+  display: block;
+}
+input {
+  font-size: 1em;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+}
+button.save-button {
+  font-size: 1em;
+  padding: 0.5em;
+  margin-top: 0.5em;
+}
+h2 {
+  text-align: center;
+  margin-top: 0;
+}
+h4 {
+  text-align: center;
+  margin-top: 0;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+}
+
