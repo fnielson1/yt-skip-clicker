@@ -15,7 +15,6 @@ function getSkipButtonClass(callback) {
   callback(DEFAULT_SKIP_BUTTON_CLASS);
 }
 
-// Listen for Alt+S to trigger skip ad
 window.addEventListener('keydown', function(e) {
   // You can change the shortcut here
   if (e.altKey && e.key.toLowerCase() === 'enter') {
