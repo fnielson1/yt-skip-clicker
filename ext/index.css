@@ -19,6 +19,9 @@ label, input, button {
   box-sizing: border-box;
   display: block;
 }
+label {
+  font-size: 1.1em;
+}
 input {
   font-size: 1em;
   padding: 0.5em;
@@ -32,6 +35,11 @@ button.save-button {
 h2 {
   text-align: center;
   margin-top: 0;
+  margin-bottom: 0;
+}
+h3 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 h4 {
   text-align: center;
@@ -53,6 +61,10 @@ h4 {
 .horizontal-group > div {
   display: flex;
   flex-direction: row;
+}
+
+#skip-ad-classname-group {
+  padding-top: 0.5em;
 }
 
 #status-message {

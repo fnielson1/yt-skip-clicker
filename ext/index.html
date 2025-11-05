@@ -7,20 +7,19 @@
   </head>
   <body>
     <div class="container">
-      <div style="display:flex; justify-content:center;">
-        <img src="icon.svg" alt="Extension Icon" width="32" height="32" style="display:block; margin-bottom:1em;"/>
-      </div>
-      <h2>Skip Clicker</h2>
-      <h4>
-        Press your keyboard shortcut to focus on the 'Skip Ad' button.
-      </h4>
+      <h2>Skip Ad Helper</h2>
+      <h3>
+        Press your keyboard shortcut to focus on the 'Skip Ad' button and then press ENTER to skip the ad.
+      </h3>
 
-      <!-- Skip Ad class name shortcut -->
+      <!-- Focus shortcut -->
       <div class="input-group">
-        <label for="skip-ad-classname">
-          Skip Ad Class Name
+        <label id="focus-shortcut-label" for="focus-shortcut">
+          Focus using the keyboard shortcut:
         </label>
-        <input id="skip-ad-classname" type="text" />
+        <select id="focus-shortcut" name="focus-shortcut">
+          <!-- final option is Enter -->
+        </select>
       </div>
 
       <!-- Modifier keys -->
@@ -39,20 +38,21 @@
         </div>
       </div>
 
-      <!-- Focus shortcut -->
-      <div class="input-group">
-        <label id="focus-shortcut-label" for="focus-shortcut">
-          Focus using the keyboard shortcut:
+      <!-- Save button -->
+      <button id="save-button">Save</button>
+
+      <!-- Skip Ad class name shortcut -->
+      <div id="skip-ad-classname-group" class="input-group">
+        <label for="skip-ad-classname">
+          Skip Ad Class Name (don't change unless you know what you are doing)
         </label>
-        <select id="focus-shortcut" name="focus-shortcut">
-          <!-- final option is Enter -->
-        </select>
+        <input id="skip-ad-classname" type="text" />
       </div>
 
-
-      <button id="save-button">Save</button>
+      <!-- Reset button -->
       <button id="reset-button" style='margin-top: 1em'>Reset defaults</button>
 
+      <!-- Status -->
       <h4 id="status-message"></h4>
     </div>
   </body>
