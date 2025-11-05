@@ -44,3 +44,17 @@ h4 {
   width: 100%;
 }
 
+.horizontal-group {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.horizontal-group > div {
+  display: flex;
+  flex-direction: row;
+}
+
+#status-message {
+  color: #b00020;
+}

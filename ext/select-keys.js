@@ -5,7 +5,7 @@ function main() {
   // Add Enter option (value is "ENTER")
   const enterOpt = document.createElement('option');
   enterOpt.value = 'ENTER';
-  enterOpt.textContent = 'Enter';
+  enterOpt.textContent = enterOpt.value;
   select.appendChild(enterOpt);
 
   for (let i = 97; i <= 122; i++) { // ASCII codes for a..z

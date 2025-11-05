@@ -24,15 +24,19 @@
       </div>
 
       <!-- Modifier keys -->
-      <div>
-        <label for="alt-checkbox">
-          Alt
-        </label>
-        <input type="checkbox" id="alt-checkbox" />
-        <label for="ctrl-checkbox">
-          Ctrl
-        </label>
-        <input type="checkbox" id="ctrl-checkbox" />
+      <div class="horizontal-group">
+        <div>
+          <label for="alt-focus-shortcut">
+            Alt
+          </label>
+          <input type="checkbox" id="alt-focus-shortcut"/>
+        </div>
+        <div>
+          <label for="ctrl-focus-shortcut">
+            Ctrl
+          </label>
+          <input type="checkbox" id="ctrl-focus-shortcut"/>
+        </div>
       </div>
 
       <!-- Focus shortcut -->
@@ -48,6 +52,8 @@
 
       <button id="save-button">Save</button>
       <button id="reset-button" style='margin-top: 1em'>Reset defaults</button>
+
+      <h4 id="status-message"></h4>
     </div>
   </body>
 </html>

@@ -1,7 +1,10 @@
 /**
  *
- * @param msgObj {object}
- * @returns {Promise<{skipClassName: string, focusShortcutKey: string, error?: string}>}
+ * @param msgObj {{skipClassName: string, focusShortcutKey: string,
+ * modifierFocusShortcutKeys: {isAlt: boolean, isCtrl: boolean, isShift: boolean}}}
+ * @returns {Promise<{skipClassName: string, focusShortcutKey: string,
+ * modifierFocusShortcutKeys: {isAlt: boolean, isCtrl: boolean, isShift: boolean},
+ * error?: string}>}
  */
 async function sendMessageToActiveTab(msgObj) {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -10,19 +13,56 @@ async function sendMessageToActiveTab(msgObj) {
 }
 
 /**
+ *
+ * @param modifierFocusShortcutKeys {{isAlt: boolean, isCtrl: boolean, isShift: boolean}}
+ */
+function buildFocusShortcutModifiersLabel(modifierFocusShortcutKeys) {
+  /**
+   * @type {string[]}
+   */
+  const modifiers = [];
+  if (modifierFocusShortcutKeys.isAlt) {
+    modifiers.push('Alt');
+  }
+  if (modifierFocusShortcutKeys.isCtrl) {
+    modifiers.push('Ctrl');
+  }
+  if (modifierFocusShortcutKeys.isShift) {
+    modifiers.push('Shift');
+  }
+  return  modifiers.join(' + ');
+}
+
+/**
  * Update the UI elements with the current settings
- * @param settings {{skipClassName: string, focusShortcutKey: string, error?: string}}
+ * @param settings {{skipClassName: string, focusShortcutKey: string,
+ * modifierFocusShortcutKeys: {isAlt: boolean, isCtrl: boolean, isShift: boolean}, error?: string}}
  * @returns {Promise<void>}
  */
 async function updateUiWithSettings(settings) {
   const skipClassNameElement = document.getElementById('skip-ad-classname');
   const focusShortcutElement = document.getElementById('focus-shortcut');
   const focusShortcutLabelElement = document.getElementById('focus-shortcut-label');
+  const altFocusShortcutElement = document.getElementById('alt-focus-shortcut');
+  const ctrlFocusShortcutElement = document.getElementById('ctrl-focus-shortcut');
+  const statusElement = document.getElementById('status-message');
 
   skipClassNameElement.value = settings.skipClassName;
   focusShortcutElement.value = settings.focusShortcutKey;
+  altFocusShortcutElement.checked = settings.modifierFocusShortcutKeys.isAlt;
+  ctrlFocusShortcutElement.checked = settings.modifierFocusShortcutKeys.isCtrl;
 
-  focusShortcutLabelElement.innerText = 'Focus using the keyboard shortcut Alt + ' + settings.focusShortcutKey;
+  if (!settings.error) {
+    focusShortcutLabelElement.innerText =
+      'Focus using the keyboard shortcut: '
+      + buildFocusShortcutModifiersLabel(settings.modifierFocusShortcutKeys)
+      + ' + ' + settings.focusShortcutKey;
+  }
+  else {
+    focusShortcutLabelElement.innerText = 'There was an error';
+    statusElement.innerText = settings.error;
+  }
+
 }
 
 /**
@@ -34,6 +74,8 @@ async function uiScript() {
   const resetButton = document.getElementById('reset-button');
   const skipClassNameElement = document.getElementById('skip-ad-classname');
   const focusShortcutElement = document.getElementById('focus-shortcut');
+  const altFocusShortcutElement = document.getElementById('alt-focus-shortcut');
+  const ctrlFocusShortcutElement = document.getElementById('ctrl-focus-shortcut');
 
   // Populate UI with current settings
   const settings = await sendMessageToActiveTab({
@@ -51,12 +93,18 @@ async function uiScript() {
     const response = await sendMessageToActiveTab({
       action: 'saveSettings',
       skipClassName: skipClassValue,
-      focusShortcutKey: shortcutValue
+      focusShortcutKey: shortcutValue,
+      modifierFocusShortcutKeys: {
+        isAlt: altFocusShortcutElement.checked,
+        isCtrl: ctrlFocusShortcutElement.checked,
+      }
     });
 
     // Update UI with saved settings
     await updateUiWithSettings(response);
-    window.close(); // Close the dialog
+    if (!response.error) {
+      window.close(); // Close the dialog if no error
+    }
   });
 
   resetButton.addEventListener('click', async (e) => {

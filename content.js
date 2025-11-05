@@ -22,8 +22,8 @@ async function focusOnSkipButton() {
  * Listen for keydown events to focus on the skip button
  */
 window.addEventListener('keydown', async function(e) {
-  const focusShortcutKey = await getFocusShortcutKey();
-  if (e.altKey && e.key.toUpperCase() === focusShortcutKey) {
+  const doFocus = await shouldFocus(e);
+  if (doFocus) {
     focusOnSkipButton().catch(e => logMessage(e));
   }
 });
@@ -35,7 +35,7 @@ function main() {
   chrome.runtime.onMessage.addListener(
     /**
      *
-     * @param request {{action: string, skipClassName?: string, focusShortcutKey?: string}}
+     * @param request {{action: string, skipClassName?: string, focusShortcutKey?: string, modifierFocusShortcutKeys?: {isAlt: boolean, isCtrl: boolean, isShift: boolean}}}
      * @param sender {*}
      * @param sendResponse {*}
      * @returns {boolean}
@@ -44,7 +44,7 @@ function main() {
       const local = async () => {
         try {
           if (request.action === 'saveSettings') {
-            await saveSettings(request.skipClassName, request.focusShortcutKey);
+            await saveSettings(request.skipClassName, request.focusShortcutKey, request.modifierFocusShortcutKeys);
           }
           else if (request.action === 'resetSettings') {
             await resetSettings();

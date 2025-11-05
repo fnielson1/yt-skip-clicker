@@ -9,7 +9,7 @@
   "permissions": ["activeTab", "storage"],
   "content_scripts": [
     {
-      "js": ["ext/logger.js", "ext/utils.js", "ext/css-utils.js", "content.js"],
+      "js": ["ext/logger.js", "ext/settings-utils.js", "ext/css-utils.js", "content.js"],
       "matches": ["https://*.youtube.com/*", "https://youtube.com/*"],
       "run_at": "document_end"
     }
