@@ -12,7 +12,11 @@ function main() {
   for (let i = 97; i <= 121; i++) {
     const letter = String.fromCharCode(i).toUpperCase();
     // skip certain letters that might be used by the browser
-    if (letter === 'F' || letter === 'C' || letter === 'V' || letter === 'X') continue;
+    if (letter === 'F' || letter === 'C' || letter === 'V'
+      || letter === 'X' || letter === 'W' || letter === 'R'
+      || letter === 'B') {
+      continue;
+    }
 
     const opt = document.createElement('option');
     opt.value = letter;
