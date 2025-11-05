@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "YouTube 'Skip Ad' Clicker",
+  "name": "YouTube 'Skip Ad' Helper",
   "version": "1.0",
   "description": "A helper for skipping YouTube ads that have the 'Skip Ad' button.",
   "action": {
