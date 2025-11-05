@@ -1,34 +1,91 @@
 <html lang="en">
   <head>
+    <script src="script.js" defer></script>
+    <script src="select-keys.js" defer></script>
     <title></title>
     <style>
       body {
         padding: 1em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1em;
+        min-width: 320px;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
       }
       div {
-        white-space: nowrap;
-        font-size: 1.25em;
         text-align: center;
       }
-      div + div {
-        margin-top: 1em;
+      label, input, button {
+        width: 100%;
+        box-sizing: border-box;
+        display: block;
+      }
+      input {
+        font-size: 1em;
+        padding: 0.5em;
+        margin-bottom: 0.5em;
+      }
+      button.save-button {
+        font-size: 1em;
+        padding: 0.5em;
+        margin-top: 0.5em;
       }
       h2 {
         text-align: center;
         margin-top: 0;
       }
+      h4 {
+        text-align: center;
+        margin-top: 0;
+      }
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        width: 100%;
+      }
     </style>
   </head>
   <body>
-    <div style="display:flex; justify-content:center;">
-      <img src="icon.svg" alt="Extension Icon" width="32" height="32" style="display:block; margin-bottom:1em;"/>
-    </div>
-    <h2>Skip Clicker</h2>
-    <div>
-      Press Alt + Enter to focus the Skip button.
-    </div>
-    <div>
-      Then press Enter to skip the ad.
+    <div class="container">
+      <div style="display:flex; justify-content:center;">
+        <img src="icon.svg" alt="Extension Icon" width="32" height="32" style="display:block; margin-bottom:1em;"/>
+      </div>
+      <h2>Skip Clicker</h2>
+      <h4>
+        Press your keyboard shortcut to focus on the 'Skip Ad' button.
+      </h4>
+
+      <!-- Skip Ad class name shortcut -->
+      <div class="input-group">
+        <label for="skip-ad-classname">
+          Skip Ad Class Name
+        </label>
+        <input id="skip-ad-classname" type="text" />
+      </div>
+
+      <!-- Focus shortcut -->
+      <div class="input-group">
+        <label id="focus-shortcut-label" for="focus-shortcut">
+          Focus using the keyboard shortcut Alt + [Shortcut]:
+        </label>
+        <select id="focus-shortcut" name="focus-shortcut">
+          <!-- final option is Enter -->
+        </select>
+      </div>
+
+
+      <button id="save-button">Save</button>
+      <button id="reset-button" style='margin-top: 1em'>Reset defaults</button>
     </div>
   </body>
 </html>

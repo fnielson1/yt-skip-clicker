@@ -25,9 +25,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="6.3046875"
-     inkscape:cx="87.236679"
-     inkscape:cy="53.690211"
+     inkscape:zoom="3.1523438"
+     inkscape:cx="87.712515"
+     inkscape:cy="112.77323"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="-8"
@@ -35,35 +35,39 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg1" />
   <!-- Background -->
-  <rect
-     width="48"
-     height="48"
-     rx="10.5"
-     fill="#38bdf8"
-     id="rect1"
-     x="8"
-     y="8"
-     style="stroke-width:0.75" />
   <!-- Open Stylized C -->
-  <path
-     d="M 42.5,23 Q 35,17 26,23 q -9,9 0,18 9,6 16.5,0"
-     fill="none"
-     stroke="#ffffff"
-     stroke-width="8"
-     stroke-linecap="round"
-     stroke-linejoin="round"
-     id="path1" />
   <!-- Bigger S, moved to top, same horizontal position and size -->
-  <text
-     x="25.129883"
-     y="34.066162"
-     font-family="Arial, Helvetica, sans-serif"
-     font-size="21px"
-     font-weight="bold"
-     fill="#ffffff"
-     stroke="#38bdf8"
-     stroke-width="1.65"
-     paint-order="stroke"
-     style="dominant-baseline:middle"
-     id="text1">S</text>
+  <g
+     id="g1"
+     transform="matrix(1.3333333,0,0,1.3333333,-10.67658,-10.653352)">
+    <rect
+       width="48"
+       height="48"
+       rx="10.5"
+       fill="#38bdf8"
+       id="rect1"
+       x="8"
+       y="8"
+       style="stroke-width:0.75" />
+    <path
+       d="M 42.5,23 Q 35,17 26,23 q -9,9 0,18 9,6 16.5,0"
+       fill="none"
+       stroke="#ffffff"
+       stroke-width="8"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="path1" />
+    <text
+       x="17.278585"
+       y="21.615107"
+       font-family="Arial, Helvetica, sans-serif"
+       font-size="21px"
+       font-weight="bold"
+       fill="#ffffff"
+       stroke="#38bdf8"
+       stroke-width="1.65"
+       paint-order="stroke"
+       style="dominant-baseline:middle"
+       id="text1">S</text>
+  </g>
 </svg>
