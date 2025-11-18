@@ -5,8 +5,8 @@ const SKIP_BUTTON_CLASS_KEY = 'skipButtonClass';
 const DEFAULT_SKIP_BUTTON_CLASS = 'ytp-skip-ad-button';
 const DEFAULT_FOCUS_SHORTCUT = 'Q';
 const DEFAULT_MODIFIER_FOCUS_SHORTCUT = {
-  isAlt: true,
-  isCtrl: false,
+  isAlt: false,
+  isCtrl: true,
   isShift: false,
 }
 
